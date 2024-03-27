@@ -1,0 +1,69 @@
+<div class="container">
+
+    <div>
+        <div *ngIf="message" class="alert alert-success">
+            <p> {{message}}</p>
+        </div>
+        <div *ngIf="errorMessage.length<0" class="alert alert-danger">
+            <p> {{errorMessage}}</p>
+        </div>
+
+
+    <div *ngIf="registeraccount?.clientId!=null">
+        <div class="cardIn">
+            <h4 style="text-align: center;color:rgb(138, 106, 235);"> PROFILE</h4> <br>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm"><img src="../../../assets/profileLogo.svg" alt="Cinque Terre"> <br><br></div>
+                <div class="col-sm"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm"></div>
+                <div class="col-sm">
+                    <h6 style="color:brown">Client ID</h6>
+                    <h6 style="color:brown"> Name</h6>
+                    <h6 style="color:brown"> E-Mail</h6>
+                    <h6 style="color:brown"> Password</h6>
+                    <h6 style="color:brown"> AccountID</h6>
+                    <h6 style="color:brown"> Balance</h6>
+
+                </div>
+                <div class="col-sm">
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.clientId }}</h6>
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.name }}</h6>
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.email }}</h6>
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.password }}</h6>
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.account?.balance}}</h6>
+                    <h6 style="color:rgb(64, 45, 122)">{{ registeraccount?.account?.accountId }}</h6>
+                    <!-- <h6 style="color:rgb(64, 45, 122)">{{ clientId }}</h6> -->
+                </div>
+            </div> <br>
+            <div>
+                <button  type="button" class="btn btn-warning" (click)="updateTheClient()">Update</button>
+                <button style="margin-left:60px;" type="button" class="btn btn-danger" (click)="deleteTheClientById()">Delete</button>
+            </div>
+
+            <!-- <div class="outer">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Client E-Mail</th>
+                <th>Client Password</th>
+           
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="table-dark">{{ registeraccount?.clientId }}</td>
+                <td class="table-dark">{{ registeraccount?.name }}</td>
+                <td class="table-dark">{{ registeraccount?.email }}</td>
+                <td class="table-dark">{{ registeraccount?.password }}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div> -->
+        </div>
+    </div>

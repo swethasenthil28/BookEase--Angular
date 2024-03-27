@@ -1,0 +1,27 @@
+
+.cardIn{
+    /* border: 1px solid; */
+    padding: 40px;
+    border-radius: 1rem;
+}
+
+.cardIn:hover
+{
+    box-shadow:1px 1px 7px 7px rgb(182, 181, 181);
+    background-color: rgb(244, 244, 247);
+}
+
+
+button{
+    margin-left:75px;
+}
+
+.imgcardsize{
+    height: 300px;
+    width: 300px;
+}
+h4{
+    margin-top: 20px;
+    padding-left: 55px;
+    color: rgb(39, 39, 76);
+}

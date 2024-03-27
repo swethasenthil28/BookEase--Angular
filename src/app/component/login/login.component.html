@@ -1,0 +1,80 @@
+<!-- <div *ngIf="message" class="alert alert-success">
+    <p> {{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p> {{errorMessage}}</p>
+</div>
+<div class="container">
+    <form class="loginForm" id="form2" #userForm="ngForm">
+
+        <div>
+            <input class="loginInput" type="email" name="customeremail" id="customeremail" placeholder="Email"
+                [(ngModel)]="newLogin.email" #emaildRef="ngModel" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" required>
+            <div *ngIf="emaildRef.invalid && (emaildRef.dirty || emaildRef.touched)">
+                <p *ngIf="emaildRef.errors?.['required']" class="text-danger">Email is required.</p>
+                <p *ngIf="emaildRef.errors?.['pattern']" class="text-danger">Please enter a valid email address.</p>
+            </div>
+        </div><br>
+
+        <div>
+            <input class="loginInput" type="password" name="customerpassword" id="customerpassword"
+                placeholder="Password" [(ngModel)]="newLogin.password" #passwordRef="ngModel"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required>
+            <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)">
+              
+            </div>
+        </div><br>
+
+        <div></div>
+        <input type="checkbox">Remember me
+        <a href="#">Forget Password?</a>
+        <br><br>
+        <button class="loginButton" (click)="addLogin()">Login</button><br>
+
+        <p>Don't have an account? <a class="registerclass" (click)="registerNewUser()">Register</a></p>
+    </form>
+</div> -->
+
+<div class="row">
+    <div class="col-12" *ngIf="!isAdminLogin">
+      <div class="login-container">
+        <form class="login-form">
+          <h2>User Login</h2>
+          <p>Please login to your account</p>
+          <div class="input-group">
+            <input type="text" id="email" name="email" placeholder="email" [(ngModel)]="login.email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="login.password"   required>
+          </div>
+          <button type="submit" (click)="onUserLogin()" >Login</button>
+          <div class="bottom-text">
+            <p>Don't have an account? <a href="register">Sign Up</a></p>
+            <p><a href="#">Forgot password?</a></p>
+            <p><a (click)="openAdminLogin()">Admin Login?</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-12" *ngIf="isAdminLogin">
+      <div class="login-container">
+        <form class="login-form">
+          <h1>Admin Login</h1>
+          <p>Please login to your account</p>
+          <div class="input-group">
+            <input type="text" id="email" name="name" placeholder="name" [(ngModel)]="login.email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password" name="password" placeholder="Password" [(ngModel)]="login.password"   required>
+          </div>
+          <button type="submit" (click)="onAdminLogin()"  >Login</button>
+          <div class="bottom-text">
+            <!-- <p>Don't have an account? <a href="#">Sign Up</a></p> -->
+            <!-- <p><a href="#">Forgot password?</a></p> -->
+            <p><a (click)="closeAdminLogin()">User Login?</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

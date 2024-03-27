@@ -1,0 +1,64 @@
+<div *ngIf="message" class="alert alert-success">
+    <p> {{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p> {{errorMessage}}</p>
+</div>
+
+
+<div class="container">
+
+    <form class="registerForm" id="form1" #userForm="ngForm">
+        <h2>Register</h2>
+        <div>
+            <input class="registerInput" type="text" name="clientname" id="clientname" placeholder="Client name"
+                [(ngModel)]="newRegister.name" #nameRef="ngModel" pattern="[A-Za-z ]{2,}" required>
+            <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
+                <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required,cannot be balnk.</p>
+                <p *ngIf="nameRef.errors?.['pattern']" class="text-danger">Only chars are allowed,Min 3 char required.
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <input class="registerInput" type="number" name="accountBalance" id="accountBalance"
+                placeholder="Account Balance" [(ngModel)]="newRegister.balance" #balanceRef="ngModel" min=0 required>
+            <div *ngIf="balanceRef.invalid && (balanceRef.touched || balanceRef.dirty)">
+                <p *ngIf="balanceRef.errors?.['required']" class="text-danger">Balance is required,It cant be blank.</p>
+                <p *ngIf="balanceRef.errors?.['min']" class="text-danger">-ve value not allowed .</p>
+            </div>
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="number" name="clientId" id="clientId" placeholder="Client Id"
+                [(ngModel)]="newRegister.clientId" #clientIdRef="ngModel" required>
+            <div *ngIf="clientIdRef.invalid && (clientIdRef.touched || clientIdRef.dirty)">
+                <p *ngIf="clientIdRef.errors?.['required']" class="text-danger">ClinetId is required,It cant be blank.</p>
+            </div>
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="email" name="clientEmail" id="clientEmail" placeholder="Client Email"
+                [(ngModel)]="newRegister.email" #emaildRef="ngModel" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" required>
+                <div *ngIf="emaildRef.invalid && (emaildRef.dirty || emaildRef.touched)">
+                    <p *ngIf="emaildRef.errors?.['required']" class="text-danger">Email is required.</p>
+                    <p *ngIf="emaildRef.errors?.['pattern']" class="text-danger">Please enter a valid email address.</p>
+                  </div>
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="password" name="clientPassword" id="clientPassword"
+                placeholder="Password" [(ngModel)]="newRegister.password" autocomplete="off" #passwordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" required>
+
+                <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)">
+                    <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required.</p>
+                    <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">*Must contain at least one number <br> *One uppercase *One lowercase letter <br> *At least 4 or more characters.
+                </div>
+        </div><br>
+
+        <button class="registerButton" (click)="addRegistration()">Register</button><br> <br>
+
+        <p>Already Registered? <a class="loginclass" (click)="NavigateToLogin()">Login</a></p>
+    </form>
+</div>

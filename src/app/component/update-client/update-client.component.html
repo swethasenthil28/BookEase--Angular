@@ -1,0 +1,45 @@
+<div *ngIf="message" class="alert alert-success">
+    <p> {{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p> {{errorMessage}}</p>
+</div>
+
+<div class="container">
+
+    <form class="registerForm">
+<!-- 
+        <div>
+            <input class="registerInput" type="number" name="accountId" id="accountId" placeholder="Account Id"
+                [(ngModel)]="accountId">
+        </div><br> -->
+
+        <div>
+            <input class="registerInput" type="text" name="clientname" id="clientname" placeholder="Client name"
+                [(ngModel)]="newRegister.name">
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="text" name="accountBalance" id="accountBalance"
+                placeholder="Account Balance" [(ngModel)]="newRegister.balance">
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="number" name="clinetId" id="clinetId" placeholder="Clinet Id"
+                [(ngModel)]="newRegister.clientId">
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="email" name="clientEmail" id="clientEmail" placeholder="Client Email"
+                [(ngModel)]="newRegister.email">
+        </div><br>
+
+        <div>
+            <input class="registerInput" type="password" name="clientPassword" id="clientPassword"
+                placeholder="Password" [(ngModel)]="newRegister.password" autocomplete="off">
+        </div><br>
+
+        <button class="registerButton" (click)="updateTheClient()">Update</button><br> <br>
+
+    </form>
+</div>

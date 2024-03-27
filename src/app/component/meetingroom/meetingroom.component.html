@@ -1,0 +1,78 @@
+<div *ngIf="message" class="alert alert-success">
+    <p> {{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p> {{errorMessage}}</p>
+</div>
+<div class="container">
+    <form class="meetingRoom">
+
+      
+     
+        <!-- <div>
+            <p>Enter Hall Id:</p>
+            <input class="meetingRoomInput" type="number" name="meetingroomId" placeholder="1" [ngModel]="newMeetingRoom.id">
+           
+        </div> -->
+        <h3><B>Add Hall Details</B></h3>
+        <div>
+            
+            <br>
+            <p>Enter Hall Name:</p>
+            <input class="meetingRoomInput" type="text" name="Meeting Hall" placeholder="Meetinghall" [(ngModel)]="newMeetingRoom.name">
+           
+        </div>
+
+         <div>
+            <label for="floorNumber" class="meetingRoomInput">Choose the floor number:</label>
+            <select name="floorNumber" id="floorNumber" [(ngModel)]="newMeetingRoom.floorNumber">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div>
+        <label for="capacity"class="meetingRoomInput">Choose the capacity:</label>
+        <select name="capacity" id="capacity" [(ngModel)]="newMeetingRoom.capacity">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+            <option value="100">1000</option>
+        </select>
+       </div>
+
+         <div>
+            <p>Enter Availability date:</p>
+              <input class="meetingRoomInput" type="date" name="Date Available"  placeholder="2024-03-03" [(ngModel)]="newMeetingRoom.date">
+          </div><br>
+
+         <div>
+            <p>Enter cost of Hall:</p>
+            <input class="meetingRoomInput" type="number" name="Cost of Room"  placeholder="1000.0" [(ngModel)]="newMeetingRoom.costOfRoom">
+          </div><br>
+        
+          <div>
+          <p>Select the availability of the room:</p>
+            <input class="meetingRoomInput" type="radio" id="availability-yes" name="Availability" value="true" [(ngModel)]="newMeetingRoom.isAvailable">
+            <label for="availability-yes">Yes</label><br>
+           <!-- <input class="meetingRoomInput" type="radio" id="availability-no" name="Availability" value="No" [(ngModel)]="newMeetingRoom.isAvailable">
+            <label for="availability-no">No</label><br>  -->
+        </div> 
+
+        <div>
+        <label class="meetingRoomInput" for="type">Choose the Hall:</label>
+        <select class="meetingRoomInput" name="Category" id="type" [(ngModel)]="newMeetingRoom.type">
+            <option value="Birthday Party">Birthday Party</option>
+            <option value="Marriage">Get together</option>
+        </select>
+       </div>
+<!-- 
+       <div class="meetingRoomInput">
+        <label for="exampleFormControlFile1">Image</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+      </div> -->
+
+       <button class="addMeetingRoomButton"(click)="addMeetingRoom()"type="button">Submit</button>
+    
+    </form>
+    </div>

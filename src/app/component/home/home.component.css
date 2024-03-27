@@ -1,0 +1,82 @@
+.outer{
+
+}
+
+#slider {
+	overflow: hidden;
+}
+
+@keyframes slider {
+	0% { left: 0; }
+	30% { left: 0; }
+	33% { left: -100%; }
+	63% { left: -100%; }
+	66% { left: -200%; }
+	95% { left: -200%; }
+	100% { left: 0; }
+}
+#slider figure {
+	width:300%;
+	position: relative;
+	animation: 7s slider infinite;
+}
+
+#slider figure:hover {
+	/*animation-play-state: paused; enable for pause on hover*/
+}
+#slider figure img {
+	width: 33.333333333%;
+	height : 500px;
+	float: left;
+}
+
+h3{
+    color: rgb(4, 8, 81);
+}
+h5{
+    color:burlywood
+}
+
+.outer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+/* .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    gap:30px;   
+    margin-bottom: 80px;
+} */
+
+.cardIn{
+    /* border: 1px solid; */
+    padding: 40px;
+    border-radius: 1rem;
+}
+
+.cardIn:hover
+{
+    box-shadow:1px 1px 7px 7px rgb(182, 181, 181);
+    background-color: rgb(244, 244, 247);
+}
+
+
+button{
+    margin-left:75px;
+}
+
+.imgcardsize{
+    height: 300px;
+    width: 300px;
+}
+h4{
+    margin-top: 20px;
+    padding-left: 55px;
+    color: rgb(39, 39, 76);
+}
+
